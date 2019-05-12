@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "lib": [
+        "es2018",
+        "dom"
+      ],
+      "module": "commonjs",
+      "noImplicitReturns": false,
+      "outDir": "lib",
+      "sourceMap": true,
+      "target": "es6",
+      "strict": false,
+    },
+    "compileOnSave": true,
+    "include": [
+      "src"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }
