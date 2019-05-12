@@ -3,7 +3,11 @@ import * as LRU from 'lru-cache';
 
 import { InvestorProfile, FirmProfile, InvestMentHistory, FirmMemberList } from './network.d'
 
-const cache = new LRU({ max: 200, maxAge: 300000 }); // Cache DB queries for 3 minutes (300000ms).
+const cache = new LRU({ max: 350, maxAge: 300000 }); // Cache DB queries for 3 minutes (300000ms).
+
+setInterval(function () {
+    cache.prune();
+}, 300 * 1000); // 300 * 1000 milsec = every 5 minutes
 
 async function get(url: string): Promise<any> {
     return new Promise(async function (resolve, reject) {
